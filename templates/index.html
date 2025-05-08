@@ -1,0 +1,32 @@
+
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca Virtual</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Biblioteca Virtual</h1>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/catalogo">Catálogo de Gêneros</a>
+        <a href="/adicionar_livro">Adicionar Livro</a>
+    </nav>
+    <ul>
+        {% for livro in livros %}
+            <li>
+                {{ livro.titulo }} - {{ livro.autor }}
+                {% if livro.emprestado %}
+                    (Emprestado)
+                    <a href="/devolver_livro/{{ loop.index0 }}">Devolver</a>
+                {% else %}
+                    <a href="/emprestar_livro/{{ loop.index0 }}">Emprestar</a>
+                {% endif %}
+                <a href="/editar_livro/{{ loop.index0 }}">Editar</a>
+                <a href="/apagar_livro/{{ loop.index0 }}">Apagar</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
