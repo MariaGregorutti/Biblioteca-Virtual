@@ -1,23 +1,23 @@
 
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catálogo de Gêneros</title>
+    <title>Catálogo</title>
     <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-    <h1>Catálogo de Gêneros</h1>
-    <nav>
-        <a href="/">Home</a>
-        <a href="/adicionar_livro">Adicionar Livro</a>
-    </nav>
-    <ul>
-        <li>Romance</li>
-        <li>Ficção</li>
-        <li>Suspense</li>
-        <li>Fantasia</li>
-        <li>Terror</li>
-    </ul>
+
+<h1>Catálogo de Gêneros</h1>
+
+<ul>
+    {% for genero in generos %}
+    <li>{{ genero }}</li>
+    {% endfor %}
+</ul>
+
+<a href="{{ url_for('index') }}">Voltar</a>
+
 </body>
 </html>

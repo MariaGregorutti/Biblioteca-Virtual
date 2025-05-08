@@ -1,114 +1,158 @@
 
+/* General Styles */
 body {
-    font-family: 'Georgia', serif;
-    background-color: #f5f5dc;
-    color: #5a3921;
-    margin: 0;
-    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
+    color: #333;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f5f5f5;
 }
 
 h1 {
-    color: #8b4513;
-    text-align: center;
-    border-bottom: 2px solid #d2b48c;
+    color: #2c3e50;
+    border-bottom: 2px solid #3498db;
     padding-bottom: 10px;
     margin-bottom: 20px;
 }
 
-nav {
-    background-color: #d2b48c;
-    padding: 10px;
-    border-radius: 5px;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-nav a {
-    color: #5a3921;
-    text-decoration: none;
-    margin: 0 15px;
-    font-weight: bold;
-    padding: 5px 10px;
-    border-radius: 3px;
-    transition: background-color 0.3s;
-}
-
-nav a:hover {
-    background-color: #c19a6b;
-    color: white;
-}
-
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-li {
-    background-color: #e6d5b8;
-    margin-bottom: 10px;
-    padding: 15px;
-    border-radius: 5px;
-    border-left: 5px solid #8b4513;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
 a {
-    color: #a0522d;
+    color: #3498db;
     text-decoration: none;
-    margin-left: 10px;
-    padding: 3px 8px;
-    border-radius: 3px;
-    transition: all 0.3s;
+    transition: color 0.3s;
 }
 
 a:hover {
-    background-color: #8b4513;
-    color: white;
+    color: #2980b9;
 }
 
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    box-shadow: 0 2px 3px rgba(0,0,0,0.1);
+    background-color: white;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #3498db;
+    color: white;
+    font-weight: bold;
+}
+
+tr:hover {
+    background-color: #f1f9ff;
+}
+
+/* Button and Action Links */
+button, .button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+button:hover, .button:hover {
+    background-color: #2980b9;
+}
+
+.actions a {
+    margin-right: 10px;
+    padding: 5px 10px;
+    border-radius: 3px;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+}
+
+.actions a:hover {
+    background-color: #e9ecef;
+}
+
+/* Form Styles */
 form {
-    background-color: #e6d5b8;
+    background-color: white;
     padding: 20px;
     border-radius: 5px;
-    max-width: 500px;
-    margin: 20px auto;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 3px rgba(0,0,0,0.1);
+    margin: 20px 0;
+    max-width: 600px;
 }
 
 label {
     display: block;
-    margin-bottom: 8px;
-    color: #5a3921;
+    margin-bottom: 5px;
     font-weight: bold;
 }
 
 input[type="text"] {
     width: 100%;
-    padding: 10px;
+    padding: 8px;
     margin-bottom: 15px;
-    border: 1px solid #d2b48c;
+    border: 1px solid #ddd;
     border-radius: 4px;
-    background-color: #f9f4e8;
+    box-sizing: border-box;
 }
 
-button {
-    background-color: #8b4513;
+/* List Styles */
+ul {
+    list-style-type: none;
+    padding: 0;
+    background-color: white;
+    box-shadow: 0 2px 3px rgba(0,0,0,0.1);
+    padding: 20px;
+    border-radius: 5px;
+}
+
+li {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+}
+
+li:last-child {
+    border-bottom: none;
+}
+
+/* Utility Classes */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 8px 15px;
+    background-color: #6c757d;
     color: white;
-    border: none;
-    padding: 10px 20px;
     border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s;
 }
 
-button:hover {
-    background-color: #5a3921;
+.back-link:hover {
+    background-color: #5a6268;
+    color: white;
 }
 
+/* Responsive Design */
+@media (max-width: 768px) {
+    table {
+        display: block;
+        overflow-x: auto;
+    }
 
-li[data-emprestado="true"] {
-    background-color: #f0e0c0;
-    border-left-color: #cd853f;
+    th, td {
+        padding: 8px 10px;
+    }
 }
