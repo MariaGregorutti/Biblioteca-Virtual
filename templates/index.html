@@ -1,44 +1,14 @@
-
-
-<html lang="pt-BR">
+<!DOCTYPE html>
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biblioteca</title>
-    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
 </head>
 <body>
-
-<h1>Lista de Livros</h1>
-
-<a href="{{ url_for('adicionar_livro') }}">Adicionar Livro</a>
-
-<table>
-    <tr>
-        <th>Título</th>
-        <th>Autor</th>
-        <th>Emprestado</th>
-        <th>Data de Devolução</th>
-        <th>Ações</th>
-    </tr>
-    {% for livro in livros %}
-    <tr>
-        <td>{{ livro.titulo }}</td>
-        <td>{{ livro.autor }}</td>
-        <td>{{ 'Sim' if livro.emprestado else 'Não' }}</td>
-        <td>{{ livro.data_devolucao_formatada or 'N/A' }}</td>
-        <td>
-            {% if not livro.emprestado %}
-            <a href="{{ url_for('emprestar_livro', codigo=loop.index0) }}">Emprestar</a>
-            {% else %}
-            <a href="{{ url_for('devolver_livro', codigo=loop.index0) }}">Devolver</a>
-            {% endif %}
-            <a href="{{ url_for('editar_livro', codigo=loop.index0) }}">Editar</a>
-            <a href="{{ url_for('apagar_livro', codigo=loop.index0) }}">Excluir</a>
-        </td>
-    </tr>
-    {% endfor %}
-</table>
-
+    <h1>Bem-vindo à Biblioteca!</h1>
+    <a href="/catalogo">Ir para o Catálogo</a>
 </body>
 </html>
